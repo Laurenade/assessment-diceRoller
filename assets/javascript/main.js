@@ -27,7 +27,7 @@ rollButton.addEventListener("click", function() {                              /
     let valueEnteredTextbox = textboxInput.value                               // (3) //
         
     let currentRoll = 0                                                        // (4) //
-        while (currentRoll <= valueEnteredTextbox) {      
+        while (currentRoll < valueEnteredTextbox) {      
             let randNum = Math.floor(Math.random() * 6) + 1
             numberRolled = randNum       
             currentRoll += 1
@@ -43,21 +43,19 @@ rollButton.addEventListener("click", function() {                              /
         }
 })    
 
-        resultsButton.addEventListener("click", function() {                              // (1) //
+    resultsButton.addEventListener("click", function() {                              // (1) //
         
-            let number = 0                                                                // (2) //
-                while (number < dieRolls.length) {
-                    listOfResults.innerHTML += "<li>" + dieRolls[number] + "</li>"        // (3) //
-                number += 1
-        }     
-            let toListNumber = Number(listOfResults.innerHTML)                            // (4) //
-                listOfResults.innerHTML += toListNumber
-        })
-
-
-
-
+        let number = 0                                                                // (2) //
+            while (number < dieRolls.length) {
+                listOfResults.innerHTML += "<li>" + dieRolls[number] + "</li>"        // (3) //
+            number += 1                                                               // (4) //
+        }            
+    })
         
+
+
+
+
 // no. 4 //
     // 1----- Add a click event listener to your "Show All Rolls" (resultsButton) button
     // 2----- Loop over the dieRolls array 
